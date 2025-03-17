@@ -14,8 +14,12 @@ describe('Orange HRM Tests', () => {
     lastNameField: "[name='lastName']",
     genericField: ".oxd-input--active",
     dateFild: "[placeholder='yyyy-dd-mm']",
+    genericCombobox: ".oxd-select-text--arrow",
+    secundItemcomboBox: '.oxd-select-dropdown > :nth-child(2) > span',
+    thirdItemcomboBox: '.--selected',
+    dateOfBirth: "[placeholder='yyyy-dd-mm']",
     dateCloseButton: ".--close",
-    submitButton: "[type='submit']"
+    submitButton: "[type='submit']",
   }
 
   
@@ -38,6 +42,14 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.submitButton).eq(0).click()
     cy.get('body').should('contain', 'Successfully Updated')
     cy.get('.oxd-toast-close')
+    cy.get( selectorsList.genericCombobox).eq(0).click()
+    cy.get(selectorsList.secundItemcomboBox).click()
+    cy.get(selectorsList.genericCombobox).eq(1).click()
+    cy.get(selectorsList.thirdItemcomboBox).click()
+    cy.get(selectorsList.dateOfBirth).eq(1).clear().type('1987-04-16')
+    cy.get('.oxd-radio-wrapper').eq(0).click()
+    cy.get("[tabindex='0']").eq(2).click()
+    
     
     
     
