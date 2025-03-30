@@ -24,6 +24,10 @@ class LoginPage{
        
         
     }
+
+    checkAccessIvalid(){
+        cy.get(this.selectorsList().wrongCredentialAlert)
+    }
 }
 export default LoginPage
 

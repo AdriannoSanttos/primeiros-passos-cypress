@@ -2,7 +2,7 @@ class MenuPage {
     selectorsList(){
         const selectors = {
             myInfoButton: '[href="/web/index.php/pim/viewMyDetails"]',
-            performanceButton: "[href='/web/index.php/performance/viewPerformanceModule']"
+            
 
         }
 
@@ -14,9 +14,7 @@ class MenuPage {
         
     }
 
-    accessPerfomace(){
-        cy.get(this.selectorsList().performanceButton).click()
-    }
+    
 }
 
 export default MenuPage
